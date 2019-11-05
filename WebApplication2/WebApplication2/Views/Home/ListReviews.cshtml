@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication2.Models.UserReviews>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+
+        .media-body {
+            border: 1.5px solid grey;
+        }
+
+        .media-body .panel-heading {
+            display: block;
+            background-color: antiquewhite;
+            border-bottom: 0.5px solid grey;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="col-md-4">
+    <h2>Users reviews</h2>
+            @foreach (WebApplication2.Models.UserReviews r in Model)
+            {
+                <div class="media-body">
+                    <div class="panel-heading">
+                        <div class="author">@r.Name</div>
+                        <div class="email">@r.Email</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media-text texxt-justify">@r.Text</div>
+                    </div>
+                </div>
+            }
+        </div>
+</body>
+</html>
